@@ -1,27 +1,57 @@
+// Countdown
+
 const targetDate = new Date("August 1, 2026 16:00:00").getTime();
 
-const timer = setInterval(function () {
+const days = document.getElementById("days");
+const hours = document.getElementById("hours");
+const minutes = document.getElementById("minutes");
+const seconds = document.getElementById("seconds");
+
+function updateCountdown() {
 
     const now = new Date().getTime();
 
     const distance = targetDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    if (distance <= 0) {
 
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        days.innerHTML = "00";
+        hours.innerHTML = "00";
+        minutes.innerHTML = "00";
+        seconds.innerHTML = "00";
 
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-
-    if (distance < 0) {
-
-        clearInterval(timer);
-
-        document.getElementById("countdown").innerHTML = "WE'RE LIVE 🎉";
-
+        return;
     }
 
-}, 1000);
+    days.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    hours.innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    minutes.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    seconds.innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+
+// Fade Animation
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
