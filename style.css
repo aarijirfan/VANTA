@@ -449,11 +449,13 @@ color:#8d8d8d;
 
 .fade{
 
-opacity:0;
+opacity:1;
 
-transform:translateY(40px);
+transform:translateY(0);
 
 transition:1s;
+
+}
 
 }
 
