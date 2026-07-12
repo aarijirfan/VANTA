@@ -1,109 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meet VANTA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet VANTA</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="glow"></div>
+<div class="background-glow"></div>
 
-<div class="container">
+<section class="hero">
 
-    <img src="assets/logo.png" class="logo" alt="VANTA">
+    <div class="hero-content">
 
-    <p class="small">MEET</p>
+        <h1 class="logo-text">VANTA</h1>
 
-    <h1>VANTA</h1>
+        <p class="hero-tag">Meet Us At</p>
 
-    <p class="subtitle">
-        Discover our first pop-up experience.
-    </p>
+        <h2 class="event-title">Apna Karachi Fest</h2>
 
-    <div class="divider"></div>
+        <p class="hero-description">
+            Discover timeless stainless steel jewellery,
+            exclusive event pricing, and our newest collection.
+        </p>
 
-    <h2>APNA KARACHI FEST</h2>
+        <a href="#event" class="scroll-btn">
+            Explore ↓
+        </a>
 
-    <p class="details">
-        1–2 August 2026
-    </p>
+    </div>
 
-    <p class="details">
-        YMCA Ground<br>
-        Saddar, Karachi
-    </p>
+</section>
 
-    <div class="divider"></div>
+<section class="event-section" id="event">
 
-    <p class="count-title">
-        EVENT STARTS IN
-    </p>
+    <div class="event-card">
+
+        <h3>APNA KARACHI FEST</h3>
+
+        <div class="info">
+
+            <div class="item">
+                <span>📍</span>
+                <p>YMCA Ground<br>Saddar, Karachi</p>
+            </div>
+
+            <div class="item">
+                <span>🗓</span>
+                <p>1–2 August 2026</p>
+            </div>
+
+            <div class="item">
+                <span>🕓</span>
+                <p>4:00 PM – 11:00 PM</p>
+            </div>
+
+        </div>
+
+        <a class="primary-btn"
+        href="https://maps.app.goo.gl/vsrWKePihYXSxV6w7"
+        target="_blank">
+
+            Open in Google Maps
+
+        </a>
+
+    </div>
+
+</section>
+
+<section class="countdown-section">
+
+    <h3>EVENT STARTS IN</h3>
 
     <div id="countdown">
 
-        <div>
+        <div class="time-box">
+
             <span id="days">00</span>
+
             <small>DAYS</small>
+
         </div>
 
-        <div>
+        <div class="time-box">
+
             <span id="hours">00</span>
+
             <small>HOURS</small>
+
         </div>
 
-        <div>
+        <div class="time-box">
+
             <span id="minutes">00</span>
+
             <small>MINUTES</small>
+
         </div>
 
     </div>
 
-    <div class="divider"></div>
+</section>
+<section class="visit-section">
 
-    <p class="notice">
-        Exclusive Event Pricing<br>
-        Limited Stock Available
-    </p>
+    <h3>WHY VISIT?</h3>
 
-    <a class="button"
-href="https://maps.app.goo.gl/vsrWKePihYXSxV6w7"
-target="_blank">
+    <div class="visit-grid">
 
-Open in Google Maps →
+        <div class="visit-item">
+            <h4>Exclusive Event Pricing</h4>
+            <p>Special prices available only during the event.</p>
+        </div>
 
-</a>
+        <div class="visit-item">
+            <h4>Premium Packaging</h4>
+            <p>Experience VANTA's signature minimalist presentation.</p>
+        </div>
 
-<a class="button"
-href="https://wa.me/923118109139?text=Hi%20VANTA!%20I%27m%20interested%20in%20your%20collection.%20Could%20you%20please%20share%20your%20latest%20products%20and%20prices%3F">
+        <div class="visit-item">
+            <h4>Limited Stock</h4>
+            <p>Selected designs will only be available while stock lasts.</p>
+        </div>
 
-Chat on WhatsApp →
+    </div>
 
-</a>
+</section>
 
-<a class="button"
-href="https://www.instagram.com/vantaform.pk/">
+<section class="contact-section">
 
-Instagram →
+    <h3>CONNECT WITH VANTA</h3>
 
-</a>
+    <a class="secondary-btn"
+    href="https://wa.me/923118109139?text=Hi%20VANTA!%20I%27m%20interested%20in%20your%20collection.%20Could%20you%20please%20share%20your%20latest%20products%20and%20prices%3F">
 
-<p class="footer">
+        💬 Chat on WhatsApp
 
-Crafted for Everyday Wear.
+    </a>
 
-</p>
+    <a class="secondary-btn"
+    href="https://www.instagram.com/vantaform.pk/"
+    target="_blank">
 
-</div>
+        📸 Follow on Instagram
+
+    </a>
+
+</section>
+
+<footer>
+
+    <p>Crafted for Everyday Wear.</p>
+
+    <h2>VANTA</h2>
+
+</footer>
 
 <script src="script.js"></script>
 
