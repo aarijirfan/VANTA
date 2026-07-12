@@ -46,3 +46,50 @@ h1{
     background:#222;
     margin:35px 0;
 }
+
+h2{
+    font-size:32px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.details{
+    color:#bdbdbd;
+    line-height:1.8;
+    margin-bottom:10px;
+}
+
+.count-title{
+    color:#888;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:25px;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+#countdown div{
+    display:flex;
+    flex-direction:column;
+}
+
+#countdown span{
+    font-size:42px;
+    font-weight:700;
+}
+
+#countdown small{
+    color:#888;
+    letter-spacing:2px;
+    margin-top:5px;
+}
+
+.notice{
+    color:#d6d6d6;
+    line-height:1.8;
+    margin-bottom:30px;
+}
