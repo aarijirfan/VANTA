@@ -84,3 +84,14 @@ behavior:"smooth"
 });
 
 };
+// LOADER
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader").classList.add("hide");
+
+},1800);
+
+});
