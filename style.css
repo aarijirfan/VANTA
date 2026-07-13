@@ -1302,3 +1302,48 @@ transition:color .3s ease;
 letter-spacing:.5px;
 
 }
+/* ==========================
+   TIMER ANIMATION
+========================== */
+
+.time-box span{
+
+display:block;
+
+transform-origin:center;
+
+}
+
+.time-box span.flip{
+
+animation:flipNumber .45s cubic-bezier(.22,1,.36,1);
+
+}
+
+@keyframes flipNumber{
+
+0%{
+
+opacity:.2;
+
+transform:translateY(12px) scale(.92);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:translateY(-4px) scale(1.06);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
