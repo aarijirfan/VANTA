@@ -1,11 +1,56 @@
-// Countdown
+/* =====================================================
+   VANTA
+   script.js
+===================================================== */
+
+/* ==========================
+   LOADER
+========================== */
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    if (loader) {
+
+        setTimeout(() => {
+
+            loader.classList.add("hide");
+
+        }, 1800);
+
+    }
+
+});
+
+
+/* ==========================
+   COUNTDOWN
+========================== */
 
 const targetDate = new Date("August 1, 2026 16:00:00").getTime();
 
-const days = document.getElementById("days");
-const hours = document.getElementById("hours");
-const minutes = document.getElementById("minutes");
-const seconds = document.getElementById("seconds");
+function updateNumber(id, value) {
+
+    const el = document.getElementById(id);
+
+    if (!el) return;
+
+    const text = String(value).padStart(2, "0");
+
+    if (el.textContent !== text) {
+
+        el.classList.remove("flip");
+
+        void el.offsetWidth;
+
+        el.textContent = text;
+
+        el.classList.add("flip");
+
+    }
+
+}
 
 function updateCountdown() {
 
@@ -14,180 +59,191 @@ function updateCountdown() {
     const distance = targetDate - now;
 
     if (distance <= 0) {
-function updateNumber(id,value){
 
-const el=document.getElementById(id);
-
-if(el.textContent!=value){
-
-el.classList.remove("flip");
-
-void el.offsetWidth;
-
-el.textContent=value;
-
-el.classList.add("flip");
-
-}
-
-}
-updateNumber("days", days);
-updateNumber("hours", hours);
-updateNumber("minutes", minutes);
-updateNumber("seconds", seconds);
+        updateNumber("days", 0);
+        updateNumber("hours", 0);
+        updateNumber("minutes", 0);
+        updateNumber("seconds", 0);
 
         return;
+
     }
 
-    days.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    hours.innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    minutes.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-    seconds.innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+    updateNumber("days", d);
+    updateNumber("hours", h);
+    updateNumber("minutes", m);
+    updateNumber("seconds", s);
 
 }
-
-setInterval(updateCountdown,1000);
 
 updateCountdown();
 
+setInterval(updateCountdown, 1000);
 
-// Fade Animation
 
-const observer = new IntersectionObserver(entries=>{
+/* ==========================
+   SCROLL REVEAL
+========================== */
 
-entries.forEach(entry=>{
+const observer = new IntersectionObserver(
 
-if(entry.isIntersecting){
+(entries) => {
 
-entry.target.classList.add("show");
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},
+
+{
+
+    threshold: 0.15
 
 }
 
-});
+);
 
-});
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
-document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
-// BACK TO TOP
+
+/* ==========================
+   BACK TO TOP
+========================== */
 
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll",()=>{
+if (topBtn) {
 
-if(window.scrollY>500){
+    window.addEventListener("scroll", () => {
 
-topBtn.classList.add("show");
+        if (window.scrollY > 500) {
 
-}else{
+            topBtn.classList.add("show");
 
-topBtn.classList.remove("show");
+        } else {
 
-}
+            topBtn.classList.remove("show");
 
-});
+        }
 
-topBtn.onclick=()=>{
+    });
 
-window.scrollTo({
+    topBtn.addEventListener("click", () => {
 
-top:0,
+        window.scrollTo({
 
-behavior:"smooth"
+            top: 0,
 
-});
+            behavior: "smooth"
 
-};
-// LOADER
+        });
 
-window.addEventListener("load",()=>{
-
-setTimeout(()=>{
-
-document.getElementById("loader").classList.add("hide");
-
-},1800);
-
-});
-// SMART NAVBAR
-
-const navbar=document.querySelector(".navbar");
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>40){
-
-navbar.classList.add("scrolled");
-
-}else{
-
-navbar.classList.remove("scrolled");
+    });
 
 }
 
+
+/* ==========================
+   SMART NAVBAR
+========================== */
+
+const navbar = document.querySelector(".navbar");
+
+const sections = document.querySelectorAll("section");
+
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    if (navbar) {
+
+        if (window.scrollY > 40) {
+
+            navbar.classList.add("scrolled");
+
+        } else {
+
+            navbar.classList.remove("scrolled");
+
+        }
+
+    }
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 180;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
 });
 
-const sections=document.querySelectorAll("section");
 
-const navLinks=document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll",()=>{
-
-let current="";
-
-sections.forEach(section=>{
-
-const top=section.offsetTop-180;
-
-if(scrollY>=top){
-
-current=section.getAttribute("id");
-
-}
-
-});
-
-navLinks.forEach(link=>{
-
-link.classList.remove("active");
-
-if(link.getAttribute("href")==="#"+current){
-
-link.classList.add("active");
-
-}
-
-});
-
-});
 /* ==========================
    FLOATING PARTICLES
 ========================== */
 
-const particles=document.getElementById("particles");
+const particles = document.getElementById("particles");
 
-for(let i=0;i<18;i++)
-    
-const p=document.createElement("div");
+if (particles) {
 
-p.className="particle";
+    for (let i = 0; i < 18; i++) {
 
-const size=Math.random()*4+2;
+        const p = document.createElement("div");
 
-p.style.width=size+"px";
+        p.className = "particle";
 
-p.style.height=size+"px";
+        const size = Math.random() * 4 + 2;
 
-p.style.left=Math.random()*100+"vw";
+        p.style.width = size + "px";
 
-p.style.animationDuration=(Math.random()*18+12)+"s";
+        p.style.height = size + "px";
 
-p.style.animationDelay=Math.random()*20+"s";
+        p.style.left = Math.random() * 100 + "vw";
 
-p.style.opacity=Math.random()*.35;
+        p.style.top = Math.random() * 100 + "vh";
 
-particles.appendChild(p);
+        p.style.animationDuration = (Math.random() * 18 + 12) + "s";
+
+        p.style.animationDelay = (Math.random() * 20) + "s";
+
+        p.style.opacity = Math.random() * 0.35 + 0.05;
+
+        particles.appendChild(p);
+
+    }
 
 }
