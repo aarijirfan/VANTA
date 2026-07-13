@@ -55,3 +55,32 @@ entry.target.classList.add("show");
 });
 
 document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+// BACK TO TOP
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.classList.add("show");
+
+}else{
+
+topBtn.classList.remove("show");
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
