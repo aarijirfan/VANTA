@@ -403,13 +403,9 @@ margin:60px 0;
 =========================== */
 
 .countdown{
-
 padding-top:90px;
-
 text-align:center;
-
-margin-bottom:180px;
-
+margin-bottom:220px;
 }
 
 .countdown h2{
@@ -497,11 +493,8 @@ color:#8d8d8d;
 }
 
 .visit{
-
 max-width:1100px;
-
-margin:0 auto 180px;
-
+margin:120px auto 180px;
 }
 
 
@@ -581,13 +574,9 @@ line-height:1.8;
 =========================== */
 
 .contact{
-
 max-width:700px;
-
-margin:220px auto 0;
-
+margin:180px auto 0;
 text-align:center;
-
 }
 
 .contact h2{
