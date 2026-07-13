@@ -877,3 +877,56 @@ font-size:30px;
 }
 
 }
+/* BACK TO TOP */
+
+#topBtn{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#fff;
+
+color:#000;
+
+font-size:22px;
+
+font-weight:700;
+
+cursor:pointer;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+z-index:9999;
+
+}
+
+#topBtn:hover{
+
+transform:translateY(-6px) scale(1.08);
+
+}
+
+#topBtn.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
