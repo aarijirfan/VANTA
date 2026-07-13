@@ -47,6 +47,7 @@ width:950px;
 height:950px;
 
 background:radial-gradient(circle,
+                        
 rgba(255,255,255,.10),
 transparent 70%);
 
@@ -1165,7 +1166,7 @@ position:absolute;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.08);
+background:radial-gradient(circle,#ffffff,#ffffff00);
 
 animation:float linear infinite;
 
