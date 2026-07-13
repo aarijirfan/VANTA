@@ -333,22 +333,29 @@ display:flex;
 
 justify-content:center;
 
-gap:22px;
+align-items:center;
+
+gap:26px;
 
 flex-wrap:wrap;
 
+margin-top:45px;
+
+}
 }
 .time-box{
 
-width:130px;
+width:145px;
 
-background:#101010;
+padding:34px 20px;
 
-border:1px solid #242424;
+background:linear-gradient(180deg,#141414,#0b0b0b);
 
-border-radius:24px;
+border:1px solid rgba(255,255,255,.08);
 
-padding:30px 15px;
+border-radius:28px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.45);
 
 transition:.35s;
 
@@ -356,31 +363,37 @@ transition:.35s;
 
 .time-box:hover{
 
-transform:translateY(-6px);
+transform:translateY(-10px);
 
-border-color:#3d3d3d;
+border-color:rgba(255,255,255,.18);
+
+box-shadow:0 25px 60px rgba(255,255,255,.06);
+
+
 
 }
 
 .time-box span{
 
-display:block;
-
-font-size:52px;
+font-size:58px;
 
 font-weight:800;
 
-margin-bottom:8px;
+letter-spacing:2px;
+
+display:block;
+
+margin-bottom:10px;
 
 }
-
 .time-box small{
 
-font-size:12px;
+font-size:11px;
 
-letter-spacing:4px;
+letter-spacing:5px;
 
-color:#9c9c9c;
+color:#8a8a8a;
+
 
 }
 
