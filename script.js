@@ -146,3 +146,32 @@ link.classList.add("active");
 });
 
 });
+/* ==========================
+   FLOATING PARTICLES
+========================== */
+
+const particles=document.getElementById("particles");
+
+for(let i=0;i<30;i++){
+
+const p=document.createElement("div");
+
+p.className="particle";
+
+const size=Math.random()*4+2;
+
+p.style.width=size+"px";
+
+p.style.height=size+"px";
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.animationDuration=(Math.random()*18+12)+"s";
+
+p.style.animationDelay=Math.random()*20+"s";
+
+p.style.opacity=Math.random()*.35;
+
+particles.appendChild(p);
+
+}
