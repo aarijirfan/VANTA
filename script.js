@@ -152,8 +152,8 @@ link.classList.add("active");
 
 const particles=document.getElementById("particles");
 
-for(let i=0;i<30;i++){
-
+for(let i=0;i<18;i++)
+    
 const p=document.createElement("div");
 
 p.className="particle";
