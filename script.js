@@ -14,11 +14,27 @@ function updateCountdown() {
     const distance = targetDate - now;
 
     if (distance <= 0) {
+function updateNumber(id,value){
 
-        days.innerHTML = "00";
-        hours.innerHTML = "00";
-        minutes.innerHTML = "00";
-        seconds.innerHTML = "00";
+const el=document.getElementById(id);
+
+if(el.textContent!=value){
+
+el.classList.remove("flip");
+
+void el.offsetWidth;
+
+el.textContent=value;
+
+el.classList.add("flip");
+
+}
+
+}
+updateNumber("days", days);
+updateNumber("hours", hours);
+updateNumber("minutes", minutes);
+updateNumber("seconds", seconds);
 
         return;
     }
