@@ -1,4 +1,7 @@
-/* ========= VANTA ========= */
+/* ===========================
+   VANTA • PART 1
+   RESET + HERO + BUTTONS
+=========================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -9,12 +12,21 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
+html{
+overflow-x:hidden;
+}
+
 body{
 
 font-family:'Inter',sans-serif;
+
 background:#070707;
+
 color:#fff;
+
 overflow-x:hidden;
+
+line-height:1.6;
 
 }
 
@@ -24,21 +36,21 @@ content:"";
 
 position:fixed;
 
-width:900px;
-
-height:900px;
-
 left:50%;
 
 top:-420px;
 
 transform:translateX(-50%);
 
+width:950px;
+
+height:950px;
+
 background:radial-gradient(circle,
-rgba(255,255,255,.12),
+rgba(255,255,255,.10),
 transparent 70%);
 
-filter:blur(30px);
+filter:blur(35px);
 
 animation:glow 8s ease-in-out infinite;
 
@@ -48,33 +60,9 @@ z-index:-1;
 
 }
 
-content:"";
-
-position:fixed;
-
-top:-250px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:700px;
-
-height:700px;
-
-background:radial-gradient(circle,
-rgba(255,255,255,.07),
-transparent 70%);
-
-pointer-events:none;
-
-z-index:-1;
-
-}
-
 section{
 
-padding:100px 24px;
+padding:110px 24px;
 
 }
 
@@ -96,9 +84,9 @@ position:relative;
 
 .hero-content{
 
-max-width:850px;
-
 width:100%;
+
+max-width:900px;
 
 display:flex;
 
@@ -109,19 +97,18 @@ align-items:center;
 justify-content:center;
 
 }
-max-width:750px;
 
-}
 .logo{
 
-width:340px;
+width:280px;
+
 display:block;
 
 margin:auto;
 
 margin-bottom:45px;
 
-filter:drop-shadow(0 0 30px rgba(255,255,255,.12));
+filter:drop-shadow(0 0 40px rgba(255,255,255,.10));
 
 transition:.4s;
 
@@ -139,37 +126,39 @@ font-size:13px;
 
 letter-spacing:8px;
 
-color:#9a9a9a;
-
 text-transform:uppercase;
 
-margin-bottom:18px;
+color:#9c9c9c;
+
+margin-bottom:22px;
 
 }
 
 .hero-title{
 
-font-size:92px;
-  
+font-size:76px;
+
 font-weight:800;
 
-letter-spacing:14px;
-
-margin-bottom:18px;
+letter-spacing:8px;
 
 text-transform:uppercase;
 
-}
-.hero-description{
-margin-top:8px;
-  
-font-size:17px;
+line-height:1.05;
 
-color:#8d8d8d;
+margin-bottom:20px;
+
+}
+
+.hero-description{
+
+font-size:17px;
 
 letter-spacing:5px;
 
 text-transform:uppercase;
+
+color:#8b8b8b;
 
 margin-bottom:55px;
 
@@ -177,99 +166,39 @@ margin-bottom:55px;
 
 .hero-button{
 
-display:inline-block;
+display:inline-flex;
 
-padding:18px 42px;
+justify-content:center;
 
-border:1px solid #2c2c2c;
+align-items:center;
+
+padding:18px 46px;
 
 border-radius:999px;
 
+border:1px solid #2d2d2d;
+
+background:#111;
+
+color:#fff;
+
 text-decoration:none;
 
-color:white;
+font-weight:600;
 
 transition:.35s;
-
-font-weight:600;
 
 }
 
 .hero-button:hover{
 
-background:white;
+background:#fff;
 
-color:black;
+color:#000;
 
-transform:translateY(-4px);
+transform:translateY(-5px);
 
-}
-
-.event{
-
-max-width:900px;
-
-margin:auto;
-
-}
-
-.card{
-
-background:#111;
-
-border:1px solid #222;
-
-border-radius:26px;
-
-padding:45px;
-
-backdrop-filter:blur(12px);
-
-}
-
-.card h2{
-
-font-size:36px;
-
-margin-bottom:35px;
-
-}
-
-.info{
-
-display:flex;
-
-flex-direction:column;
-
-gap:24px;
-
-margin-bottom:40px;
-
-}
-
-.info-item{
-
-display:flex;
-
-gap:18px;
-
-align-items:flex-start;
-
-}
-
-.info-item span{
-
-font-size:26px;
-
-}
-
-.info-item p{
-
-font-size:18px;
-
-color:#d5d5d5;
-
-line-height:1.7;
+box-shadow:0 20px 50px rgba(255,255,255,.12);
 
 }
 
@@ -283,47 +212,215 @@ padding:18px;
 
 border-radius:18px;
 
+border:1px solid #2d2d2d;
+
+background:#111;
+
+color:#fff;
+
 text-decoration:none;
 
 text-align:center;
 
-color:white;
-
-border:1px solid #2f2f2f;
-
-margin-top:18px;
+font-weight:600;
 
 transition:.35s;
 
-font-weight:600;
-
-background:#151515;
+margin-top:18px;
 
 }
 
 .button:hover{
 
-background:white;
+background:#fff;
 
-color:black;
+color:#000;
 
-transform:translateY(-3px);
+transform:translateY(-4px);
+
+box-shadow:0 20px 50px rgba(255,255,255,.10);
+
+}
+/* ===========================
+   VANTA • PART 2
+   EVENT + MAP
+=========================== */
+
+.event{
+
+max-width:900px;
+
+margin:auto;
 
 }
 
-.countdown{
+.card{
 
-padding-top:60px;
+background:linear-gradient(180deg,#121212,#0d0d0d);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:30px;
+
+padding:48px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 30px 80px rgba(0,0,0,.45);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+border-color:rgba(255,255,255,.15);
+
+}
+
+.card h2{
+
+font-size:40px;
+
+font-weight:700;
+
+margin-bottom:12px;
+
+letter-spacing:2px;
+
+}
+
+.card>p{
+
+color:#8d8d8d;
+
+margin-bottom:35px;
+
+font-size:16px;
+
+}
+
+.info{
+
+display:flex;
+
+flex-direction:column;
+
+gap:28px;
+
+margin-bottom:40px;
+
+}
+
+.info-item{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:18px;
+
+}
+
+.info-item span{
+
+font-size:26px;
+
+width:34px;
 
 text-align:center;
 
 }
 
+.info-item p{
+
+font-size:18px;
+
+color:#d6d6d6;
+
+line-height:1.8;
+
+}
+
+.map-box{
+
+margin-top:35px;
+
+}
+
+.map-box iframe{
+
+width:100%;
+
+height:360px;
+
+border:none;
+
+border-radius:24px;
+
+overflow:hidden;
+
+margin-bottom:25px;
+
+filter:grayscale(100%) brightness(.90);
+
+transition:.45s;
+
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.map-box iframe:hover{
+
+filter:grayscale(0%) brightness(1);
+
+transform:scale(1.01);
+
+}
+
+.map-box .button{
+
+margin-top:0;
+
+}
+
+.divider{
+
+width:100%;
+
+height:1px;
+
+background:rgba(255,255,255,.06);
+
+margin:60px 0;
+
+}
+/* ===========================
+   VANTA • PART 3
+   COUNTDOWN + WHY VISIT
+=========================== */
+
+.countdown{
+
+padding-top:90px;
+
+text-align:center;
+
+margin-bottom:130px;
+
+}
+
 .countdown h2{
 
-font-size:36px;
+font-size:38px;
 
-margin-bottom:45px;
+font-weight:700;
+
+letter-spacing:4px;
+
+margin-bottom:50px;
 
 }
 
@@ -335,27 +432,27 @@ justify-content:center;
 
 align-items:center;
 
-gap:26px;
+gap:28px;
 
 flex-wrap:wrap;
 
-margin-top:45px;
+margin-top:20px;
 
 }
-}
+
 .time-box{
 
-width:145px;
+width:150px;
 
-padding:34px 20px;
+padding:36px 20px;
 
-background:linear-gradient(180deg,#141414,#0b0b0b);
+background:linear-gradient(180deg,#151515,#0b0b0b);
 
 border:1px solid rgba(255,255,255,.08);
 
 border-radius:28px;
 
-box-shadow:0 15px 40px rgba(0,0,0,.45);
+box-shadow:0 18px 45px rgba(0,0,0,.45);
 
 transition:.35s;
 
@@ -367,13 +464,13 @@ transform:translateY(-10px);
 
 border-color:rgba(255,255,255,.18);
 
-box-shadow:0 25px 60px rgba(255,255,255,.06);
-
-
+box-shadow:0 30px 70px rgba(255,255,255,.06);
 
 }
 
 .time-box span{
+
+display:block;
 
 font-size:58px;
 
@@ -381,19 +478,21 @@ font-weight:800;
 
 letter-spacing:2px;
 
-display:block;
-
 margin-bottom:10px;
 
 }
+
 .time-box small{
+
+display:block;
 
 font-size:11px;
 
 letter-spacing:5px;
 
-color:#8a8a8a;
+text-transform:uppercase;
 
+color:#8d8d8d;
 
 }
 
@@ -401,7 +500,7 @@ color:#8a8a8a;
 
 max-width:1100px;
 
-margin:auto;
+margin:0 auto 120px;
 
 }
 
@@ -409,9 +508,13 @@ margin:auto;
 
 text-align:center;
 
-font-size:36px;
+font-size:38px;
 
-margin-bottom:55px;
+font-weight:700;
+
+margin-bottom:60px;
+
+letter-spacing:2px;
 
 }
 
@@ -421,21 +524,23 @@ display:grid;
 
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
-gap:24px;
+gap:28px;
 
 }
 
 .visit-card{
 
-background:#111;
+background:linear-gradient(180deg,#131313,#0b0b0b);
 
-border:1px solid #232323;
+border:1px solid rgba(255,255,255,.08);
 
-border-radius:24px;
+border-radius:26px;
 
-padding:32px;
+padding:34px;
 
 transition:.35s;
+
+box-shadow:0 18px 40px rgba(0,0,0,.35);
 
 }
 
@@ -443,31 +548,42 @@ transition:.35s;
 
 transform:translateY(-8px);
 
-border-color:#3a3a3a;
+border-color:rgba(255,255,255,.15);
+
+box-shadow:0 25px 60px rgba(255,255,255,.05);
 
 }
 
 .visit-card h3{
 
-font-size:22px;
+font-size:23px;
 
-margin-bottom:14px;
+font-weight:600;
+
+margin-bottom:16px;
 
 }
 
 .visit-card p{
 
-color:#b9b9b9;
+font-size:16px;
+
+color:#b8b8b8;
 
 line-height:1.8;
 
 }
+/* ===========================
+   VANTA • PART 4
+   CONTACT + FOOTER + ANIMATIONS
+   RESPONSIVE
+=========================== */
 
 .contact{
 
 max-width:700px;
 
-margin:auto;
+margin:140px auto 0;
 
 text-align:center;
 
@@ -475,9 +591,13 @@ text-align:center;
 
 .contact h2{
 
-font-size:36px;
+font-size:38px;
 
-margin-bottom:35px;
+font-weight:700;
+
+letter-spacing:3px;
+
+margin-bottom:40px;
 
 }
 
@@ -485,41 +605,45 @@ footer{
 
 padding:90px 24px;
 
+margin-top:120px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
 text-align:center;
-
-border-top:1px solid #181818;
-
-margin-top:100px;
 
 }
 
 footer h2{
 
-font-size:42px;
+font-size:46px;
 
-letter-spacing:12px;
+font-weight:800;
 
-margin-top:15px;
+letter-spacing:14px;
 
-margin-bottom:15px;
+margin:18px 0;
 
 }
 
 footer p{
 
-color:#8d8d8d;
+color:#8b8b8b;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+font-size:13px;
 
 }
 
 .fade{
 
-opacity:1;
+opacity:0;
 
-transform:translateY(0);
+transform:translateY(50px);
 
-transition:1s;
-
-}
+transition:1s ease;
 
 }
 
@@ -531,7 +655,59 @@ transform:translateY(0);
 
 }
 
-@media(max-width:768px){
+@keyframes glow{
+
+0%{
+
+transform:translateX(-50%) scale(1);
+
+opacity:.9;
+
+}
+
+50%{
+
+transform:translateX(-50%) scale(1.08);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateX(-50%) scale(1);
+
+opacity:.9;
+
+}
+
+}
+
+@media (max-width:900px){
+
+.hero-title{
+
+font-size:70px;
+
+letter-spacing:10px;
+
+}
+
+.logo{
+
+width:250px;
+
+}
+
+.time-box{
+
+width:130px;
+
+}
+
+}
+
+@media (max-width:768px){
 
 section{
 
@@ -541,19 +717,33 @@ padding:80px 20px;
 
 .logo{
 
-width:130px;
+width:180px;
+
+margin-bottom:30px;
 
 }
 
 .hero-title{
 
-font-size:42px;
+font-size:48px;
+
+letter-spacing:6px;
 
 }
 
 .hero-description{
 
-font-size:16px;
+font-size:14px;
+
+letter-spacing:3px;
+
+}
+
+.hero-button{
+
+width:100%;
+
+max-width:320px;
 
 }
 
@@ -565,7 +755,7 @@ padding:30px;
 
 .card h2{
 
-font-size:28px;
+font-size:30px;
 
 }
 
@@ -575,88 +765,130 @@ font-size:16px;
 
 }
 
+.map-box iframe{
+
+height:280px;
+
+}
+
+.timer{
+
+gap:16px;
+
+}
+
 .time-box{
 
 width:100px;
 
-padding:22px;
+padding:22px 10px;
 
 }
 
 .time-box span{
 
-font-size:38px;
+font-size:36px;
+
+}
+
+.visit{
+
+margin-bottom:80px;
 
 }
 
 .visit h2,
 
-.contact h2,
+.countdown h2,
 
-.countdown h2{
+.contact h2{
 
-font-size:28px;
+font-size:30px;
+
+}
+
+.visit-grid{
+
+grid-template-columns:1fr;
+
+}
+
+footer{
+
+padding:70px 20px;
 
 }
 
 footer h2{
 
-font-size:30px;
+font-size:32px;
 
 letter-spacing:8px;
 
 }
 
-}
-@keyframes glow{
+footer p{
 
-0%{
+font-size:11px;
 
-transform:translateX(-50%) scale(1);
-
-}
-
-50%{
-
-transform:translateX(-50%) scale(1.08);
-
-}
-
-100%{
-
-transform:translateX(-50%) scale(1);
+letter-spacing:2px;
 
 }
 
 }
-.map-box{
 
-margin-top:35px;
+@media (max-width:480px){
 
-}
+.hero-title{
 
-.map-box iframe{
+font-size:38px;
 
-width:100%;
-
-height:340px;
-
-border:none;
-
-border-radius:22px;
-
-margin-bottom:22px;
-
-filter:grayscale(100%) brightness(.9);
-
-transition:.35s;
+letter-spacing:4px;
 
 }
 
-.map-box iframe:hover{
+.logo{
 
-filter:grayscale(0%) brightness(1);
+width:150px;
 
-transform:scale(1.01);
+}
+
+.hero-tag{
+
+font-size:11px;
+
+letter-spacing:5px;
+
+}
+
+.hero-description{
+
+font-size:12px;
+
+letter-spacing:2px;
+
+}
+
+.button,
+
+.hero-button{
+
+padding:16px;
+
+font-size:14px;
+
+}
+
+.time-box{
+
+width:85px;
+
+}
+
+.time-box span{
+
+font-size:30px;
+
+}
 
 }
