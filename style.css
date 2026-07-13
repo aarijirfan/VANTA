@@ -513,13 +513,10 @@ letter-spacing:2px;
 }
 
 .visit-grid{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
 gap:28px;
-
+margin-top:40px;
 }
 
 .visit-card{
