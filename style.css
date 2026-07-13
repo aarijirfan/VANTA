@@ -24,6 +24,34 @@ content:"";
 
 position:fixed;
 
+width:900px;
+
+height:900px;
+
+left:50%;
+
+top:-420px;
+
+transform:translateX(-50%);
+
+background:radial-gradient(circle,
+rgba(255,255,255,.12),
+transparent 70%);
+
+filter:blur(30px);
+
+animation:glow 8s ease-in-out infinite;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+content:"";
+
+position:fixed;
+
 top:-250px;
 
 left:50%;
@@ -62,6 +90,8 @@ align-items:center;
 
 text-align:center;
 
+position:relative;
+
 }
 
 .hero-content{
@@ -72,13 +102,23 @@ max-width:750px;
 
 .logo{
 
-width:170px;
-
-margin:auto;
+width:240px;
 
 display:block;
 
-margin-bottom:35px;
+margin:auto;
+
+margin-bottom:45px;
+
+filter:drop-shadow(0 0 30px rgba(255,255,255,.12));
+
+transition:.4s;
+
+}
+
+.logo:hover{
+
+transform:scale(1.03);
 
 }
 
@@ -98,29 +138,28 @@ margin-bottom:18px;
 
 .hero-title{
 
-font-size:62px;
+font-size:82px;
 
-font-weight:700;
+font-weight:800;
 
-margin-bottom:20px;
+letter-spacing:14px;
 
-line-height:1.1;
+margin-bottom:18px;
+
+text-transform:uppercase;
 
 }
-
 .hero-description{
 
-font-size:18px;
+font-size:17px;
 
-color:#bcbcbc;
+color:#8d8d8d;
 
-max-width:600px;
+letter-spacing:5px;
 
-margin:auto;
+text-transform:uppercase;
 
-margin-bottom:45px;
-
-line-height:1.8;
+margin-bottom:55px;
 
 }
 
@@ -540,6 +579,27 @@ footer h2{
 font-size:30px;
 
 letter-spacing:8px;
+
+}
+
+}
+@keyframes glow{
+
+0%{
+
+transform:translateX(-50%) scale(1);
+
+}
+
+50%{
+
+transform:translateX(-50%) scale(1.08);
+
+}
+
+100%{
+
+transform:translateX(-50%) scale(1);
 
 }
 
