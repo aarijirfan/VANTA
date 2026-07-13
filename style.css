@@ -1205,3 +1205,100 @@ opacity:0;
 }
 
 }
+/* ==========================
+   PREMIUM HOVER EFFECTS
+========================== */
+
+/* Cards */
+.card,
+.visit-card,
+.time-box{
+
+transition:
+transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .45s ease,
+border-color .45s ease;
+
+}
+
+.card:hover,
+.visit-card:hover,
+.time-box:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:0 35px 80px rgba(255,255,255,.06);
+
+border-color:rgba(255,255,255,.16);
+
+}
+
+/* Buttons */
+
+.button,
+.hero-button{
+
+transition:
+transform .35s cubic-bezier(.22,1,.36,1),
+box-shadow .35s ease,
+background .35s ease,
+color .35s ease;
+
+}
+
+.button:hover,
+.hero-button:hover{
+
+transform:translateY(-5px) scale(1.03);
+
+box-shadow:0 20px 50px rgba(255,255,255,.12);
+
+}
+
+/* Logo */
+
+.logo{
+
+transition:
+transform .7s cubic-bezier(.22,1,.36,1),
+filter .7s ease;
+
+}
+
+.logo:hover{
+
+transform:scale(1.04) rotate(-1deg);
+
+filter:drop-shadow(0 0 45px rgba(255,255,255,.18));
+
+}
+
+/* Map */
+
+.map-box iframe{
+
+transition:
+transform .6s cubic-bezier(.22,1,.36,1),
+filter .6s ease;
+
+}
+
+.map-box iframe:hover{
+
+transform:scale(1.02);
+
+}
+
+/* Navbar links */
+
+.nav-links a{
+
+transition:color .3s ease;
+
+}
+
+.nav-links a:hover{
+
+letter-spacing:.5px;
+
+}
