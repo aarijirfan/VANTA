@@ -1347,19 +1347,3 @@ transform:translateY(0) scale(1);
 }
 
 }
-/* ==========================
-   PAGE TRANSITION
-========================== */
-
-body{
-    opacity:0;
-    transform:translateY(20px);
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-body.loaded{
-    opacity:1;
-    transform:translateY(0);
-}
