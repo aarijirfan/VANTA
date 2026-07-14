@@ -7,9 +7,42 @@
    LOADER
 ========================== */
 
-window.addEventListener("load", () => {
+/* ==========================
+   PAGE TRANSITION
+========================== */
 
-    const loader = document.getElementById("loader");
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+
+document.querySelectorAll("a").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (
+        href &&
+        !href.startsWith("#") &&
+        !href.startsWith("http") &&
+        !link.hasAttribute("target")
+    ) {
+
+        link.addEventListener("click", function(e){
+
+            e.preventDefault();
+
+            document.body.classList.remove("loaded");
+
+            setTimeout(() => {
+
+                window.location = href;
+
+            },500);
+
+        });
+
+    }
+
+});
 
     if (loader) {
 
@@ -247,3 +280,10 @@ if (particles) {
     }
 
 }
+/* ==========================
+   PAGE TRANSITION
+========================== */
+
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
