@@ -7,42 +7,9 @@
    LOADER
 ========================== */
 
-/* ==========================
-   PAGE TRANSITION
-========================== */
-
 window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
 
-document.querySelectorAll("a").forEach(link => {
-
-    const href = link.getAttribute("href");
-
-    if (
-        href &&
-        !href.startsWith("#") &&
-        !href.startsWith("http") &&
-        !link.hasAttribute("target")
-    ) {
-
-        link.addEventListener("click", function(e){
-
-            e.preventDefault();
-
-            document.body.classList.remove("loaded");
-
-            setTimeout(() => {
-
-                window.location = href;
-
-            },500);
-
-        });
-
-    }
-
-});
+    const loader = document.getElementById("loader");
 
     if (loader) {
 
@@ -103,11 +70,8 @@ function updateCountdown() {
     }
 
     const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-
     const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
     const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
     const s = Math.floor((distance % (1000 * 60)) / 1000);
 
     updateNumber("days", d);
@@ -118,7 +82,6 @@ function updateCountdown() {
 }
 
 updateCountdown();
-
 setInterval(updateCountdown, 1000);
 
 
@@ -195,9 +158,7 @@ if (topBtn) {
 ========================== */
 
 const navbar = document.querySelector(".navbar");
-
 const sections = document.querySelectorAll("section");
-
 const navLinks = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
@@ -220,9 +181,9 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 180;
+        const top = section.offsetTop - 180;
 
-        if (window.scrollY >= sectionTop) {
+        if (window.scrollY >= top) {
 
             current = section.getAttribute("id");
 
@@ -262,15 +223,12 @@ if (particles) {
         const size = Math.random() * 4 + 2;
 
         p.style.width = size + "px";
-
         p.style.height = size + "px";
 
         p.style.left = Math.random() * 100 + "vw";
-
         p.style.top = Math.random() * 100 + "vh";
 
         p.style.animationDuration = (Math.random() * 18 + 12) + "s";
-
         p.style.animationDelay = (Math.random() * 20) + "s";
 
         p.style.opacity = Math.random() * 0.35 + 0.05;
@@ -280,10 +238,3 @@ if (particles) {
     }
 
 }
-/* ==========================
-   PAGE TRANSITION
-========================== */
-
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
